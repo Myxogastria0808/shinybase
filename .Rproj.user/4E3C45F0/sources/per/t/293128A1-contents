@@ -1,0 +1,11 @@
+shinyServer(function(input, output) {
+    graph <- ggplot(
+            data = iris,
+            mapping = aes(
+                x = iris$Sepal.Length,
+                y = iris$Sepal.Width,
+                color = Species
+            )
+        ) + geom_point() + scale_color_nejm() + labs(title="Iris", x="Sepal.Length", y="Sepal.Width", colour="Iris Species")
+    output$result <- renderPlot({graph})
+})

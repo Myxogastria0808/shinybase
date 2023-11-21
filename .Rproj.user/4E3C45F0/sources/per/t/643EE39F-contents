@@ -1,0 +1,71 @@
+shinyUI(fluidPage(
+    tags$head(
+        tags$link(rel="preconnect", href="https://fonts.googleapis.com"),
+        tags$link(rel="preconnect", href="https://fonts.gstatic.com"),
+        tags$link(href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap", rel="stylesheet"),
+        ######################################
+        tags$link(rel = "stylesheet", type = "text/css", href = "style.css"),
+        tags$link(rel = "shortcut icon", href = "favicon.png"),
+        tags$title("title")
+    ),
+    div(
+        class="my-space"
+    ),
+    fluidRow(
+        class="my-container center-block",
+        column(
+            width=12,
+            class="text-center",
+            h1(
+                class="my-font",
+                'Shiny Base Sample'
+                )
+        )
+    ),
+    titlePanel(
+        h2(
+            class="my-font",
+            'title panel'
+        )
+    ),
+    sidebarLayout(
+        sidebarPanel(
+            h4(
+                class="my-font",
+                "sidebar panel: width = 4 (default)"
+            )
+        ),
+        mainPanel(
+            h4(
+                class="my-font",
+                "main panel: width = 8 (default)"
+            ),
+        tabsetPanel(
+            type = "tabs", 
+            tabPanel(
+                p(
+                    class='my-font',
+                    "Tabs"
+                ),
+                h1("Hello"),
+                plotOutput(
+                    outputId = 'result'
+                )
+            ),
+            tabPanel(
+                p(
+                    class='my-font',
+                    "Tabs"
+                )
+            ),
+            tabPanel(
+                p(
+                    class='my-font',
+                    "Tabs"
+                )
+            )
+        )
+        )
+    )
+))
+
